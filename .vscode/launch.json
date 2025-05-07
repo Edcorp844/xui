@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:xui}",
+            "name": "Debug xui",
+            "program": "${workspaceFolder:xui}/.build/debug/xui",
+            "preLaunchTask": "swift: Build Debug xui"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:xui}",
+            "name": "Release xui",
+            "program": "${workspaceFolder:xui}/.build/release/xui",
+            "preLaunchTask": "swift: Build Release xui"
+        }
+    ]
+}
