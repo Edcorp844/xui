@@ -5,16 +5,19 @@
 #include <vector>
 #include "xui_alignment.hpp"
 
+namespace XUI
+{
 
+    class XUILayout : public XUIWidget
+    {
+    protected:
+        std::vector<XUIWidget *> children;
+        XAlignment horizontalAlign = XAlignment::Start;
+        XAlignment verticalAlign = XAlignment::Start;
 
-class XUILayout : public XUIWidget {
-protected:
-    std::vector<XUIWidget*> children;
-    XAlignment horizontalAlign = XAlignment::Start;
-    XAlignment verticalAlign = XAlignment::Start;
-
-public:
-    void addChild(XUIWidget* child);
-    void setHorizontalAlignment(XAlignment align);
-    void setVerticalAlignment(XAlignment align);
-};
+    public:
+        void addChild(XUIWidget *child);
+        void setHorizontalAlignment(XAlignment align);
+        void setVerticalAlignment(XAlignment align);
+    };
+}

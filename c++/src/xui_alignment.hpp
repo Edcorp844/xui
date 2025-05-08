@@ -1,7 +1,11 @@
 #pragma once
 
-enum class XAlignment {
-    Start,
-    Center,
-    End
-};
+namespace XUI
+{
+    enum class XAlignment
+    {
+        Start,
+        Center,
+        End
+    };
+}

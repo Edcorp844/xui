@@ -6,6 +6,7 @@
 #include "xui_widget.hpp"
 #include "xui_alignment.hpp" // if you store XAlignment separately
 
+namespace XUI{
 class XUIRow : public XUIWidget {
 public:
     std::vector<XUIWidget*> children;
@@ -14,4 +15,4 @@ public:
     XUIRow(int x, int y, int w, int h);
     void draw(Display* dpy, Window win, GC gc) override;
     void addChild(XUIWidget* child);
-};
+};}

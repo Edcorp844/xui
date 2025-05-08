@@ -1,5 +1,6 @@
 #pragma once
 
+namespace XUI{
 typedef struct
 {
     float r;
@@ -8,3 +9,4 @@ typedef struct
     float a;
 } rgba_color_t;
 
+}

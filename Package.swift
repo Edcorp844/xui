@@ -18,6 +18,10 @@ let package = Package(
                 .unsafeFlags([
                     "-L./c++/lib", // Directory containing libxui.a
                     "-lxui"        // The static library file (libxui.a)
+                ], .when(platforms: [.linux])),
+                .unsafeFlags([
+                    "-L/usr/lib", // Directory containing libxui.a
+                    "-lstdc++"        // The static library file (libxui.a)
                 ], .when(platforms: [.linux]))
             ]
         )

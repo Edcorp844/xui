@@ -8,35 +8,38 @@
 #include "xui_color.hpp"
 #include <functional>
 
-class XUIButton : public XUIWidget
+namespace XUI
 {
-public:
-    XUIButton(int x, int y, int width, int height, const std::string &label,
-              rgba_color_t color);
 
-    void draw(Display *dpy, Window win, GC gc) override;
-    // void onClick(int px, int py);
-    // void setOnClick(void (*callback)());
-    void onClick(int x, int y) override;
-    void setOnClick(std::function<void()> callback);
+    class XUIButton : public XUIWidget
+    {
+    public:
+        XUIButton(int x, int y, int width, int height, const std::string &label,
+                  rgba_color_t color);
 
-private:
-    std::string label;
-    rgba_color_t color;
+        void draw(Display *dpy, Window win, GC gc) override;
+        // void onClick(int px, int py);
+        // void setOnClick(void (*callback)());
+        void onClick(int x, int y) override;
+        void setOnClick(std::function<void()> callback);
 
-    std::function<void()> onClickCallback;
+    private:
+        std::string label;
+        rgba_color_t color;
 
-    unsigned long bgColor;
-    unsigned long borderColor;
-    unsigned long shadowColor;
-    unsigned long textColor = 0xFFFFFF;
+        std::function<void()> onClickCallback;
 
-    int padding = 8;
-    int borderWidth = 2;
-    int cornerRadius = 8;
-    int blurIntensity = 0; // 0 = none, higher = more blurred shadow (fake)
-                           // void (*onClick)() = nullptr;
-};
+        unsigned long bgColor;
+        unsigned long borderColor;
+        unsigned long shadowColor;
+        unsigned long textColor = 0xFFFFFF;
+
+        int padding = 8;
+        int borderWidth = 2;
+        int cornerRadius = 8;
+        int blurIntensity = 0; // 0 = none, higher = more blurred shadow (fake)
+                               // void (*onClick)() = nullptr;
+    };
 
 /*
 
@@ -58,4 +61,4 @@ private:
     std::string label;
     std::function<void()> onClickCallback;
 };
-*/
+*/}
